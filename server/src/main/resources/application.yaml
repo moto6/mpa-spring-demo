@@ -1,0 +1,31 @@
+myapp:
+  data:
+    init: true
+
+spring:
+  application:
+    name: todos
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+    generate-ddl: true
+  datasource:
+      url: jdbc:mariadb://localhost:13309/mydatabase
+      driver-class-name: org.mariadb.jdbc.Driver
+      username: myuser
+      password: mypassword
+
+
+server:
+  servlet:
+    encoding:
+      charset: utf-8
+      force: true
+  port: 13308
+
+logging:
+  level:
+    web: debug
+    sql: debug
+    '[myapp]': debug

@@ -1,0 +1,9 @@
+spring:
+  web:
+    resources:
+      static-locations:
+        - classpath:/static/
+        - classpath:/dist/assets/
+        - file:./../client/dist/
+  thymeleaf:
+    prefix: classpath:/dist/pages/

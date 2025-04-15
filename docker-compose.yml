@@ -1,0 +1,19 @@
+version: '3.8' # Docker Compose 파일 버전
+
+services:
+  mariadb:
+    image: mariadb:latest # 최신 MariaDB 이미지 사용
+    container_name: mariadb_container
+    restart: always # 컨테이너 재시작 정책
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword # 루트 사용자 비밀번호
+      MYSQL_DATABASE: mydatabase # 기본으로 생성될 데이터베이스 이름
+      MYSQL_USER: myuser # 사용자 이름
+      MYSQL_PASSWORD: mypassword # 사용자 비밀번호
+    ports:
+      - "13309:3306" # 호스트와 컨테이너 포트 매핑
+    volumes:
+      - mariadb_data:/var/lib/mysql # 데이터 영속성 설정
+
+volumes:
+  mariadb_data:
